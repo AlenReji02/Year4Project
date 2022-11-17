@@ -1,10 +1,53 @@
-function Toolbar(){
-    return (
-        <aside className="toolbar">
-          <h2>Shapes</h2>
-          
-        </aside>
-      );
-    }
+import React from "react";
 
-export default Toolbar
+import { DRAG_DATA_KEY, SHAPE_TYPES } from "../constants";
+
+const handleDragStart = (event) => {
+  const type = event.target.dataset.shape;
+
+  if (type) {
+    // x,y coordinates of the mouse pointer relative to the position of the padding edge of the target node
+    const offsetX = event.nativeEvent.offsetX;
+    const offsetY = event.nativeEvent.offsetY;
+
+    // dimensions of the node on the browser
+    const clientWidth = event.target.clientWidth;
+    const clientHeight = event.target.clientHeight;
+
+    const dragPayload = JSON.stringify({
+      type,
+      offsetX,
+      offsetY,
+      clientWidth,
+      clientHeight,
+    });
+
+    event.nativeEvent.dataTransfer.setData(DRAG_DATA_KEY, dragPayload);
+  }
+};
+
+export function Toolbar() {
+  return (
+    <aside className="toolbar">
+      <h2>Shapes</h2>
+      <div
+        className="shape rectangle"
+        data-shape={SHAPE_TYPES.RECT}
+        draggable
+        onDragStart={handleDragStart}
+      />
+      <div
+        className="shape circle"
+        data-shape={SHAPE_TYPES.CIRCLE}
+        draggable
+        onDragStart={handleDragStart}
+      />
+      <div
+        className="shape translatorT"
+        data-shape={SHAPE_TYPES.TRANST}
+        draggable
+        onDragStart={handleDragStart}
+      />
+    </aside>
+  );
+}

@@ -1,15 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import './App.css';
-
-import Toolbar from './components/Toolbar';
-import { Canvas } from './components/Canvas';
-import { Properties } from './components/Properties';
+import { Toolbar } from "./Components/Toolbar";
+import { Canvas } from "./Components/Canvas";
+import { Properties } from "./Components/Properties";
 
 function App() {
   return (
-    <div className="App">
-      <h1> Hello World</h1>
+    <div className="app">
       <Toolbar />
       <Canvas />
       <Properties />
