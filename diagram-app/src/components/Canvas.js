@@ -47,8 +47,8 @@ export function Canvas() {
       } else if (type === SHAPE_TYPES.TRANST) {
         // circle x, y is at the center of the circle
         createTransT({
-          x: coords.x - offsetX,
-          y: coords.y - offsetY
+          x: coords.x - 100,
+          y: coords.y - 150
         });
       }
     }

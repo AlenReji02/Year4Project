@@ -1,7 +1,21 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { Transformer, Shape } from "react-konva";
 
-import { selectShape, moveShape } from "../../state";
+import { LIMITS } from "../../constants";
+import { selectShape, moveShape, transformTransTShape } from "../../state";
+
+const boundBoxCallbackForTransT = (oldBox, newBox) => {
+  // limit resize
+  if (
+    newBox.width < LIMITS.TRANST.MIN ||
+    newBox.height < LIMITS.TRANST.MIN ||
+    newBox.width > LIMITS.TRANST.MAX ||
+    newBox.height > LIMITS.TRANST.MAX
+  ) {
+    return oldBox;
+  }
+  return newBox;
+};
 
 export function TransT({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
@@ -30,6 +44,20 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
     [id]
   );
 
+  const handleTransform = useCallback(
+    (event) => {
+      transformTransTShape(shapeRef.current, id, event);
+    },
+    [id]
+  );
+
+  const transformerInitial = {
+    x: 100,
+    y: 150,
+    width: 300,
+    height: 200
+  }
+
   return (
     <>
       <Shape
@@ -46,14 +74,34 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
           context.closePath();
           context.fillStrokeShape(shape);
         }}
+        getSelfRect={{
+          x: 0,
+          y: 0,
+          width: 300,
+          height: 200
+        }}
         {...shapeProps}
         onClick={handleSelect}
         onTap={handleSelect}
         onDragStart={handleSelect}
+        onDragEnd={handleDrag}
         ref={shapeRef}
+        onTransformEnd={handleTransform}
       />
       {isSelected && (
-        <Transformer anchorSize={5} borderDash={[6, 2]} ref={transformerRef} />
+        <Transformer 
+          anchorSize={5}
+          borderDash={[6, 2]}
+          ref={transformerRef}
+          rotateEnabled={false}
+          enabledAnchors={[
+            "top-left",
+            "top-right",
+            "bottom-right",
+            "bottom-left",
+          ]}
+          boundBoxFunc={boundBoxCallbackForTransT}
+         />
       )}
     </>
   );

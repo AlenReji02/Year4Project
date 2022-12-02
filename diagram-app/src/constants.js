@@ -31,7 +31,11 @@ export const LIMITS = {
   CIRCLE: {
     MAX: 500,
     MIN: 5
-  }
+  },
+  TRANST: {
+    MAX: 1000,
+    MIN: 10
+  },
 };
 
 export const DRAG_DATA_KEY = "__drag_data_payload__";
