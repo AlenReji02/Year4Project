@@ -48,6 +48,18 @@ export function Toolbar() {
         draggable
         onDragStart={handleDragStart}
       />
+      <div
+        className="shape programT"
+        data-shape={SHAPE_TYPES.PROGT}
+        draggable
+        onDragStart={handleDragStart}
+      />
+      <div
+        className="shape machineT"
+        data-shape={SHAPE_TYPES.MACHT}
+        draggable
+        onDragStart={handleDragStart}
+      />
     </aside>
   );
 }

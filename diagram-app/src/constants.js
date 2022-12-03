@@ -1,7 +1,9 @@
 export const SHAPE_TYPES = {
   RECT: "rect",
   CIRCLE: "circle",
-  TRANST: "transT"
+  TRANST: "transT",
+  PROGT: "progT",
+  MACHT: "machT"
 };
 
 export const DEFAULTS = {
@@ -20,6 +22,14 @@ export const DEFAULTS = {
   TRANST: {
     STROKE: "#000000",
     FILL: "#ffffff"
+  },
+  PROGT: {
+    STROKE: "#000000",
+    FILL: "#ffffff"
+  },
+  MACHT: {
+    STROKE: "#000000",
+    FILL: "#ffffff"
   }
 };
 
@@ -36,6 +46,14 @@ export const LIMITS = {
     MAX: 1000,
     MIN: 10
   },
+  PROGT: {
+    MAX: 1000,
+    MIN: 10
+  },
+  MACHT: {
+    MAX: 1000,
+    MIN: 10
+  }
 };
 
 export const DRAG_DATA_KEY = "__drag_data_payload__";

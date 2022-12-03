@@ -71,6 +71,30 @@ export const createTransT = ({ x, y }) => {
   });
 };
 
+export const createProgT = ({ x, y }) => {
+  setState((state) => {
+    state.shapes[nanoid()] = {
+      type: SHAPE_TYPES.PROGT,
+      fill: DEFAULTS.PROGT.FILL,
+      stroke: DEFAULTS.PROGT.STROKE,
+      x,
+      y
+    };
+  });
+};
+
+export const createMachT = ({ x, y }) => {
+  setState((state) => {
+    state.shapes[nanoid()] = {
+      type: SHAPE_TYPES.MACHT,
+      fill: DEFAULTS.MACHT.FILL,
+      stroke: DEFAULTS.MACHT.STROKE,
+      x,
+      y
+    };
+  });
+};
+
 export const selectShape = (id) => {
   setState((state) => {
     state.selected = id;

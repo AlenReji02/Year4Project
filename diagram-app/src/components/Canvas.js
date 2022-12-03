@@ -7,6 +7,8 @@ import {
   createCircle,
   createRectangle,
   createTransT,
+  createProgT,
+  createMachT,
   saveDiagram,
   reset
 } from "../state";
@@ -47,6 +49,18 @@ export function Canvas() {
       } else if (type === SHAPE_TYPES.TRANST) {
         // circle x, y is at the center of the circle
         createTransT({
+          x: coords.x - 100,
+          y: coords.y - 150
+        });
+      } else if (type === SHAPE_TYPES.PROGT) {
+        // circle x, y is at the center of the circle
+        createProgT({
+          x: coords.x - 100,
+          y: coords.y - 150
+        });
+      } else if (type === SHAPE_TYPES.MACHT) {
+        // circle x, y is at the center of the circle
+        createMachT({
           x: coords.x - 100,
           y: coords.y - 150
         });

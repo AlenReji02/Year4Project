@@ -91,6 +91,99 @@ aside {
   );
 }
 
+.programT {
+  float: left;
+  width: 150px;
+  height: 100px;
+  margin: 10px 20px;
+  shape-outside: polygon(
+    10% 0,
+    90% 0,
+    100% 10%,
+    100% 30%,
+    90% 40%,
+    90% 100%,
+    10% 100%,
+    10% 40%,
+    0 30%,
+    0 10%
+  );
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 10%,
+    100% 30%,
+    90% 40%,
+    90% 100%,
+    10% 100%,
+    10% 40%,
+    0 30%,
+    0 10%
+  );
+  background: black;
+}
+.programT::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: 98px;
+  width: 148px;
+  top: 0.1px;
+  left: 0.1px;
+  background-color: white;
+  clip-path: polygon(
+    10% 0,
+    88.5% 0%,
+    98.5% 10%,
+    98.5% 28%,
+    88.5% 38%,
+    88.5% 98%,
+    10% 98%,
+    10% 38%,
+    0 28%,
+    0 10%
+  );
+}
+
+.machineT {
+  float: left;
+  width: 150px;
+  height: 100px;
+  margin: 0 20px;
+  shape-outside: polygon(
+    0 0,
+    100% 0,
+    100% 50%,
+    50% 100%,
+    0 50%
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 50%,
+    50% 100%,
+    0 50%
+  );
+  background: black;
+}
+.machineT::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: 98px;
+  width: 148px;
+  top: 0.1px;
+  left: 0.1px;
+  background-color: white;
+  clip-path: polygon(
+    0 0,
+    98.5% 0,
+    98.5% 48%,
+    49% 98%,
+    0 48%
+  );
+}
+
 .panel {
   display: flex;
   flex-direction: column;
