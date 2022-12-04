@@ -21,6 +21,17 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
   const transformerRef = useRef();
 
+  React.useEffect(() => {
+    shapeRef.current.getSelfRect = () => {
+      return {
+        x: 100,
+        y: 150,
+        width: 300,
+        height: 200
+      };
+    };
+  }, []);
+
   useEffect(() => {
     if (isSelected) {
       transformerRef.current.nodes([shapeRef.current]);
@@ -51,13 +62,6 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
     [id]
   );
 
-  const transformerInitial = {
-    x: 100,
-    y: 150,
-    width: 300,
-    height: 200
-  }
-
   return (
     <>
       <Shape
@@ -74,13 +78,8 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
           context.closePath();
           context.fillStrokeShape(shape);
         }}
-        getSelfRect={{
-          x: 0,
-          y: 0,
-          width: 300,
-          height: 200
-        }}
         {...shapeProps}
+        draggable
         onClick={handleSelect}
         onTap={handleSelect}
         onDragStart={handleSelect}

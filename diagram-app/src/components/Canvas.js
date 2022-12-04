@@ -19,7 +19,7 @@ const handleDragOver = (event) => event.preventDefault();
 
 export function Canvas() {
   const shapes = useShapes((state) => Object.entries(state.shapes));
-
+  const scaleBy = 1.01;
   const stageRef = useRef();
 
   const handleDrop = useCallback((event) => {
@@ -68,6 +68,27 @@ export function Canvas() {
     }
   }, []);
 
+  function zoomStage(event) {
+    event.evt.preventDefault();
+    if (stageRef.current !== null) {
+      const stage = stageRef.current;
+      const oldScale = stage.scaleX();
+      const { x: pointerX, y: pointerY } = stage.getPointerPosition();
+      const mousePointTo = {
+        x: (pointerX - stage.x()) / oldScale,
+        y: (pointerY - stage.y()) / oldScale,
+      };
+      const newScale = event.evt.deltaY > 0 ? oldScale * scaleBy : oldScale / scaleBy;
+      stage.scale({ x: newScale, y: newScale });
+      const newPos = {
+        x: pointerX - mousePointTo.x * newScale,
+        y: pointerY - mousePointTo.y * newScale,
+      }
+      stage.position(newPos);
+      stage.batchDraw();
+    }
+  }
+
   return (
     <main className="canvas" onDrop={handleDrop} onDragOver={handleDragOver}>
       <div className="buttons">
@@ -79,6 +100,8 @@ export function Canvas() {
         width={window.innerWidth - 400}
         height={window.innerHeight}
         onClick={clearSelection}
+        onWheel={zoomStage}
+        draggable
       >
         <Layer>
           {shapes.map(

@@ -51,13 +51,6 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
     [id]
   );
 
-  const transformerInitial = {
-    x: 100,
-    y: 150,
-    width: 300,
-    height: 200
-  }
-
   return (
     <>
       <Shape
@@ -77,12 +70,6 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
             context.lineTo(100, 230);
             context.quadraticCurveTo(130, 200, 100, 150);
             context.fillStrokeShape(shape);
-        }}
-        getSelfRect={{
-          x: 0,
-          y: 0,
-          width: 300,
-          height: 200
         }}
         {...shapeProps}
         onClick={handleSelect}
