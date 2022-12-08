@@ -10,8 +10,8 @@ export const DEFAULTS = {
   RECT: {
     STROKE: "#000000",
     FILL: "#ffffff",
-    WIDTH: 150,
-    HEIGHT: 100,
+    WIDTH: 100,
+    HEIGHT: 150,
     ROTATION: 0
   },
   CIRCLE: {

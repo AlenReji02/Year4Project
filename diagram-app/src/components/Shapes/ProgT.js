@@ -22,6 +22,17 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
   const transformerRef = useRef();
 
   useEffect(() => {
+    shapeRef.current.getSelfRect = () => {
+      return {
+        x: 70,
+        y: 150,
+        width: 300,
+        height: 200
+      };
+    };
+  }, []);
+
+  useEffect(() => {
     if (isSelected) {
       transformerRef.current.nodes([shapeRef.current]);
       transformerRef.current.getLayer().batchDraw();
@@ -51,13 +62,6 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
     [id]
   );
 
-  const transformerInitial = {
-    x: 100,
-    y: 150,
-    width: 300,
-    height: 200
-  }
-
   return (
     <>
       <Shape
@@ -76,13 +80,8 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
           context.closePath();
           context.fillStrokeShape(shape);
         }}
-        getSelfRect={{
-          x: 0,
-          y: 0,
-          width: 300,
-          height: 200
-        }}
         {...shapeProps}
+        draggable
         onClick={handleSelect}
         onTap={handleSelect}
         onDragStart={handleSelect}
@@ -96,12 +95,6 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
           borderDash={[6, 2]}
           ref={transformerRef}
           rotateEnabled={false}
-          enabledAnchors={[
-            "top-left",
-            "top-right",
-            "bottom-right",
-            "bottom-left",
-          ]}
           boundBoxFunc={boundBoxCallbackForProgT}
          />
       )}

@@ -17,9 +17,20 @@ const boundBoxCallbackForTransT = (oldBox, newBox) => {
   return newBox;
 };
 
-export function TransT({ id, isSelected, type, ...shapeProps }) {
+export function TransJ({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
   const transformerRef = useRef();
+
+  useEffect(() => {
+    shapeRef.current.getSelfRect = () => {
+      return {
+        x: 100,
+        y: 150,
+        width: 300,
+        height: 200
+      };
+    };
+  }, []);
 
   useEffect(() => {
     if (isSelected) {
@@ -85,12 +96,6 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
           borderDash={[6, 2]}
           ref={transformerRef}
           rotateEnabled={false}
-          enabledAnchors={[
-            "top-left",
-            "top-right",
-            "bottom-right",
-            "bottom-left",
-          ]}
           boundBoxFunc={boundBoxCallbackForTransT}
          />
       )}

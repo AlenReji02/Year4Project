@@ -43,6 +43,12 @@ aside {
   border-radius: 50%;
 }
 
+.interpreterT {
+  float: left;
+  width:60px;
+  height: 100px;
+}
+
 .translatorT {
   float: left;
   width: 150px;

@@ -212,20 +212,15 @@ export const transformTransTShape = (node, id, event) => {
       shape.x = node.x();
       shape.y = node.y();
 
-      shape.rotation = node.rotation();
-
       shape.width = clamp(
-        // increase the width in order of the scale
         node.width() * scaleX,
-        // should not be less than the minimum width
-        LIMITS.RECT.MIN,
-        // should not be more than the maximum width
-        LIMITS.RECT.MAX
+        LIMITS.TRANST.MIN,
+        LIMITS.TRANST.MAX
       );
       shape.height = clamp(
         node.height() * scaleY,
-        LIMITS.RECT.MIN,
-        LIMITS.RECT.MAX
+        LIMITS.TRANST.MIN,
+        LIMITS.TRANST.MAX
       );
     }
   });

@@ -30,18 +30,9 @@ export function Toolbar() {
   return (
     <aside className="toolbar">
       <h2>Shapes</h2>
-      <div
-        className="shape rectangle"
-        data-shape={SHAPE_TYPES.RECT}
-        draggable
-        onDragStart={handleDragStart}
-      />
-      <div
-        className="shape circle"
-        data-shape={SHAPE_TYPES.CIRCLE}
-        draggable
-        onDragStart={handleDragStart}
-      />
+      <br></br>
+      <h3>T Diagram Shapes</h3>
+      <br></br>
       <div
         className="shape translatorT"
         data-shape={SHAPE_TYPES.TRANST}
@@ -60,6 +51,21 @@ export function Toolbar() {
         draggable
         onDragStart={handleDragStart}
       />
+      <div
+        className="shape interpreterT"
+        data-shape={SHAPE_TYPES.RECT}
+        draggable
+        onDragStart={handleDragStart}
+      />
+      <br></br>
+      <h3>J Diagram Shapes</h3>
+      <div
+        className="shape circle"
+        data-shape={SHAPE_TYPES.CIRCLE}
+        draggable
+        onDragStart={handleDragStart}
+      />
+      
     </aside>
   );
 }

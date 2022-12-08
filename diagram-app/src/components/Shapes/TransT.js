@@ -93,12 +93,7 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
           borderDash={[6, 2]}
           ref={transformerRef}
           rotateEnabled={false}
-          enabledAnchors={[
-            "top-left",
-            "top-right",
-            "bottom-right",
-            "bottom-left",
-          ]}
+
           boundBoxFunc={boundBoxCallbackForTransT}
          />
       )}
