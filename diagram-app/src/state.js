@@ -77,6 +77,7 @@ export const createProgT = ({ x, y }) => {
       type: SHAPE_TYPES.PROGT,
       fill: DEFAULTS.PROGT.FILL,
       stroke: DEFAULTS.PROGT.STROKE,
+      strokewidth: 3,
       x,
       y
     };
@@ -89,6 +90,18 @@ export const createMachT = ({ x, y }) => {
       type: SHAPE_TYPES.MACHT,
       fill: DEFAULTS.MACHT.FILL,
       stroke: DEFAULTS.MACHT.STROKE,
+      x,
+      y
+    };
+  });
+};
+
+export const createTransJ = ({ x, y }) => {
+  setState((state) => {
+    state.shapes[nanoid()] = {
+      type: SHAPE_TYPES.TRANSJ,
+      fill: DEFAULTS.TRANSJ.FILL,
+      stroke: DEFAULTS.TRANSJ.STROKE,
       x,
       y
     };

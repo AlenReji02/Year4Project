@@ -7,6 +7,7 @@ import { Rectangle } from "./Components/Shapes/Rectangle";
 import { TransT } from "./Components/Shapes/TransT";
 import { ProgT } from "./Components/Shapes/ProgT";
 import { MachT } from "./Components/Shapes/MachT";
+import { TransJ } from "./Components/Shapes/TransJ";
 
 export function Shape({ shape }) {
   const isSelectedSelector = useCallback(
@@ -25,6 +26,8 @@ export function Shape({ shape }) {
     return <ProgT {...shape} isSelected={isSelected} />;
   } else if (shape.type === SHAPE_TYPES.MACHT) {
     return <MachT {...shape} isSelected={isSelected} />;
+  } else if (shape.type === SHAPE_TYPES.TRANSJ) {
+    return <TransJ {...shape} isSelected={isSelected} />;
   }
   return null;
 }

@@ -3,7 +3,8 @@ export const SHAPE_TYPES = {
   CIRCLE: "circle",
   TRANST: "transT",
   PROGT: "progT",
-  MACHT: "machT"
+  MACHT: "machT",
+  TRANSJ: "transJ"
 };
 
 export const DEFAULTS = {
@@ -30,6 +31,10 @@ export const DEFAULTS = {
   MACHT: {
     STROKE: "#000000",
     FILL: "#ffffff"
+  },
+  TRANSJ: {
+    STROKE: "#000000",
+    FILL: "#ffffff"
   }
 };
 
@@ -51,6 +56,10 @@ export const LIMITS = {
     MIN: 10
   },
   MACHT: {
+    MAX: 1000,
+    MIN: 10
+  },
+  TRANSJ: {
     MAX: 1000,
     MIN: 10
   }

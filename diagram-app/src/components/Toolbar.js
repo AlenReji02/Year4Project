@@ -1,5 +1,5 @@
 import React from "react";
-
+import pic from "./images/transJ.PNG";
 import { DRAG_DATA_KEY, SHAPE_TYPES } from "../constants";
 
 const handleDragStart = (event) => {
@@ -60,11 +60,18 @@ export function Toolbar() {
       <br></br>
       <h3>J Diagram Shapes</h3>
       <div
+        className="shape translatorJ"
+        data-shape={SHAPE_TYPES.TRANSJ}
+        draggable
+        onDragStart={handleDragStart}
+        img ={pic}
+      />
+      <div
         className="shape circle"
         data-shape={SHAPE_TYPES.CIRCLE}
         draggable
         onDragStart={handleDragStart}
-      />
+      /> 
       
     </aside>
   );

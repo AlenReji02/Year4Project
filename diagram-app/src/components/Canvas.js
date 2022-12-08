@@ -9,6 +9,7 @@ import {
   createTransT,
   createProgT,
   createMachT,
+  createTransJ,
   saveDiagram,
   reset
 } from "../state";
@@ -61,6 +62,11 @@ export function Canvas() {
       } else if (type === SHAPE_TYPES.MACHT) {
         // circle x, y is at the center of the circle
         createMachT({
+          x: coords.x - 100,
+          y: coords.y - 150
+        });
+      } else if (type === SHAPE_TYPES.TRANSJ) {
+        createTransJ({
           x: coords.x - 100,
           y: coords.y - 150
         });

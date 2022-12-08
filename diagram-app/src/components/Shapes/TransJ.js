@@ -74,7 +74,7 @@ export function TransJ({ id, isSelected, type, ...shapeProps }) {
             context.lineTo(300, 250);
             context.quadraticCurveTo(300, 270, 330, 270);
             context.lineTo(370, 270);
-            context.quadraticCurveTo(400, 300, 370, 350);
+            context.quadraticCurveTo(400, 320, 370, 350);
             context.lineTo(290, 350);
             context.quadraticCurveTo(200, 350, 200, 280);
             context.lineTo(200, 230);
@@ -83,6 +83,7 @@ export function TransJ({ id, isSelected, type, ...shapeProps }) {
             context.fillStrokeShape(shape);
         }}
         {...shapeProps}
+        draggable
         onClick={handleSelect}
         onTap={handleSelect}
         onDragStart={handleSelect}
