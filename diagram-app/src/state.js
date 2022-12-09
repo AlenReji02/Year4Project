@@ -108,6 +108,42 @@ export const createTransJ = ({ x, y }) => {
   });
 };
 
+export const createInterJ = ({ x, y }) => {
+  setState((state) => {
+    state.shapes[nanoid()] = {
+      type: SHAPE_TYPES.INTERJ,
+      fill: DEFAULTS.INTERJ.FILL,
+      stroke: DEFAULTS.INTERJ.STROKE,
+      x,
+      y
+    };
+  });
+};
+
+export const createCompJ = ({ x, y }) => {
+  setState((state) => {
+    state.shapes[nanoid()] = {
+      type: SHAPE_TYPES.COMPJ,
+      fill: DEFAULTS.COMPJ.FILL,
+      stroke: DEFAULTS.COMPJ.STROKE,
+      x,
+      y
+    };
+  });
+};
+
+export const createMachJ = ({ x, y }) => {
+  setState((state) => {
+    state.shapes[nanoid()] = {
+      type: SHAPE_TYPES.MACHJ,
+      fill: DEFAULTS.MACHJ.FILL,
+      stroke: DEFAULTS.MACHJ.STROKE,
+      x,
+      y
+    };
+  });
+};
+
 export const selectShape = (id) => {
   setState((state) => {
     state.selected = id;

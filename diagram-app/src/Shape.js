@@ -8,6 +8,9 @@ import { TransT } from "./Components/Shapes/TransT";
 import { ProgT } from "./Components/Shapes/ProgT";
 import { MachT } from "./Components/Shapes/MachT";
 import { TransJ } from "./Components/Shapes/TransJ";
+import { InterJ } from "./Components/Shapes/InterJ";
+import { CompJ } from "./Components/Shapes/CompJ";
+import { MachJ } from "./Components/Shapes/MachJ";
 
 export function Shape({ shape }) {
   const isSelectedSelector = useCallback(
@@ -28,6 +31,12 @@ export function Shape({ shape }) {
     return <MachT {...shape} isSelected={isSelected} />;
   } else if (shape.type === SHAPE_TYPES.TRANSJ) {
     return <TransJ {...shape} isSelected={isSelected} />;
+  } else if (shape.type === SHAPE_TYPES.INTERJ) {
+    return <InterJ {...shape} isSelected={isSelected} />;
+  } else if (shape.type === SHAPE_TYPES.COMPJ) {
+    return <CompJ {...shape} isSelected={isSelected} />;
+  } else if (shape.type === SHAPE_TYPES.MACHJ) {
+    return <MachJ {...shape} isSelected={isSelected} />;
   }
   return null;
 }

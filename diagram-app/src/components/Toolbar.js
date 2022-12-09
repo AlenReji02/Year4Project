@@ -1,5 +1,4 @@
 import React from "react";
-import pic from "./images/transJ.PNG";
 import { DRAG_DATA_KEY, SHAPE_TYPES } from "../constants";
 
 const handleDragStart = (event) => {
@@ -64,7 +63,24 @@ export function Toolbar() {
         data-shape={SHAPE_TYPES.TRANSJ}
         draggable
         onDragStart={handleDragStart}
-        img ={pic}
+      />
+      <div
+        className="shape interpreterJ"
+        data-shape={SHAPE_TYPES.INTERJ}
+        draggable
+        onDragStart={handleDragStart}
+      />
+      <div
+        className="shape compilerJ"
+        data-shape={SHAPE_TYPES.COMPJ}
+        draggable
+        onDragStart={handleDragStart}
+      />
+      <div
+        className="shape machineJ"
+        data-shape={SHAPE_TYPES.MACHJ}
+        draggable
+        onDragStart={handleDragStart}
       />
       <div
         className="shape circle"

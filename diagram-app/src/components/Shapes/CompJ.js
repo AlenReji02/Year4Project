@@ -17,7 +17,7 @@ const boundBoxCallbackForTransT = (oldBox, newBox) => {
   return newBox;
 };
 
-export function TransT({ id, isSelected, type, ...shapeProps }) {
+export function CompJ({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
   const transformerRef = useRef();
 
@@ -26,8 +26,8 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
       return {
         x: 100,
         y: 150,
-        width: 300,
-        height: 200
+        width: 280,
+        height: 80
       };
     };
   }, []);
@@ -68,14 +68,10 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
         sceneFunc={(context, shape) => {
           context.beginPath();
           context.moveTo(100, 150);
-          context.lineTo(400, 150);
-          context.lineTo(400, 250);
-          context.lineTo(300, 250);
-          context.lineTo(300, 350);
-          context.lineTo(200, 350);
-          context.lineTo(200, 250);
-          context.lineTo(100, 250);
-          context.closePath();
+          context.lineTo(370, 150);
+          context.quadraticCurveTo(400, 200, 370, 230);
+          context.lineTo(100, 230);
+          context.quadraticCurveTo(130, 200, 100, 150);
           context.fillStrokeShape(shape);
         }}
         {...shapeProps}

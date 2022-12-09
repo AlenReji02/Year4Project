@@ -10,6 +10,9 @@ import {
   createProgT,
   createMachT,
   createTransJ,
+  createInterJ,
+  createCompJ,
+  createMachJ,
   saveDiagram,
   reset
 } from "../state";
@@ -67,6 +70,21 @@ export function Canvas() {
         });
       } else if (type === SHAPE_TYPES.TRANSJ) {
         createTransJ({
+          x: coords.x - 100,
+          y: coords.y - 150
+        });
+      } else if (type === SHAPE_TYPES.INTERJ) {
+        createInterJ({
+          x: coords.x - 100,
+          y: coords.y - 150
+        });
+      } else if (type === SHAPE_TYPES.COMPJ) {
+        createCompJ({
+          x: coords.x - 100,
+          y: coords.y - 150
+        });
+      } else if (type === SHAPE_TYPES.MACHJ) {
+        createMachJ({
           x: coords.x - 100,
           y: coords.y - 150
         });

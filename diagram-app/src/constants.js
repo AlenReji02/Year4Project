@@ -4,7 +4,10 @@ export const SHAPE_TYPES = {
   TRANST: "transT",
   PROGT: "progT",
   MACHT: "machT",
-  TRANSJ: "transJ"
+  TRANSJ: "transJ",
+  INTERJ: "interJ",
+  COMPJ: "compJ",
+  MACHJ: "machJ"
 };
 
 export const DEFAULTS = {
@@ -35,6 +38,18 @@ export const DEFAULTS = {
   TRANSJ: {
     STROKE: "#000000",
     FILL: "#ffffff"
+  },
+  INTERJ: {
+    STROKE: "#000000",
+    FILL: "#ffffff"
+  },
+  COMPJ: {
+    STROKE: "#000000",
+    FILL: "#ffffff"
+  },
+  MACHJ: {
+    STROKE: "#000000",
+    FILL: "#ffffff"
   }
 };
 
@@ -60,6 +75,18 @@ export const LIMITS = {
     MIN: 10
   },
   TRANSJ: {
+    MAX: 1000,
+    MIN: 10
+  },
+  INTERJ: {
+    MAX: 1000,
+    MIN: 10
+  },
+  COMPJ: {
+    MAX: 1000,
+    MIN: 10
+  },
+  MACHJ: {
     MAX: 1000,
     MIN: 10
   }
