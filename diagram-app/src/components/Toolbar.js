@@ -82,12 +82,6 @@ export function Toolbar() {
         draggable
         onDragStart={handleDragStart}
       />
-      <div
-        className="shape circle"
-        data-shape={SHAPE_TYPES.CIRCLE}
-        draggable
-        onDragStart={handleDragStart}
-      /> 
       
     </aside>
   );

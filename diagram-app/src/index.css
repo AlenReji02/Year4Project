@@ -202,6 +202,36 @@ aside {
   background-position: center center;
 }
 
+.interpreterJ {
+  float: left;
+  width: 150px;
+  height: 100px;
+  background-image: url('./images/interJ.PNG');
+  background-size: contain;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+.compilerJ {
+  float: left;
+  width: 150px;
+  height: 100px;
+  background-image: url('./images/compJ.PNG');
+  background-size: contain;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+.machineJ {
+  float: left;
+  width: 150px;
+  height: 100px;
+  background-image: url('./images/machJ.PNG');
+  background-size: contain;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
 .panel {
   display: flex;
   flex-direction: column;
