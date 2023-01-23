@@ -3,8 +3,7 @@
   padding: 0;
   border: none;
   box-sizing: border-box;
-  font-family: Roboto, Lato, Helvetica, Arial, sans-serif;
-  color: #030303;
+  font-family: Rockwell, Roboto, Lato, Helvetica, Arial, sans-serif;
 }
 
 html,
@@ -12,15 +11,30 @@ body,
 #root,
 .app {
   width: 100%;
+  height: 100%;
 }
 
 .app {
   display: flex;
-  overflow: hidden;
+  height: 100%;
 }
 
 aside {
   width: 250px;
+  background-color: #282C2F;
+}
+
+aside h2, aside h3 {
+  text-decoration: none;
+  color: white;
+  text-shadow: -1px 1px 0 #000,
+                          1px 1px 0 #000,
+                         1px -1px 0 #000,
+                        -1px -1px 0 #000;
+}
+
+a, a:hover, a:visited, a:active {
+  color: inherit;
 }
 
 .toolbar {
@@ -28,6 +42,43 @@ aside {
   flex-direction: column;
   align-items: center;
   padding: 10px 0;
+  overflow: hidden;
+  flex: 1;
+  min-height: 100vh;
+}
+
+.canvas {
+  width: calc(100% - 200px);
+  border: solid 1px lightgray;
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+  height: 100vh;
+  flex: 1;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 100vh;
+  flex: 1;
+}
+
+.selected {
+  height: 75%;
+}
+h2, .selected{
+  text-align: center;
+}
+
+.info {
+  height: 25%;
+  text-align: center;
+}
+
+.properties {
+  margin-top: 10px;
 }
 
 .shape {
@@ -43,159 +94,48 @@ aside {
 
 .interpreterT {
   float: left;
-  width:60px;
-  height: 100px;
-  border: solid 2px black;
+  width: 600px;
+  height: 200px;
+  background-image: url('./images/interT.PNG');
+  background-size: contain;
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
 
 .translatorT {
   float: left;
-  width: 150px;
-  height: 100px;
-  margin: 0 20px;
-  border: solid 2px black;
-  shape-outside: polygon(
-    0 0,
-    100% 0,
-    100% 50%,
-    66.66% 50%,
-    66.66% 100%,
-    33.33% 100%,
-    33.33% 50%,
-    0 50%
-  );
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 50%,
-    66.66% 50%,
-    66.66% 100%,
-    33.33% 100%,
-    33.33% 50%,
-    0 50%
-  );
-  background: black;
-}
-.translatorT::before {
-  content: "";
-  display: block;
-  position: relative;
-  height: 98px;
-  width: 148px;
-  top: 0.1px;
-  left: 0.1px;
-  background-color: white;
-  clip-path: polygon(
-    0 0,
-    98.5% 0,
-    98.5% 47%,
-    65% 47%,
-    65% 98.5%,
-    33.5% 98.5%,
-    33.5% 47%,
-    0 47%
-  );
+  width: 300px;
+  height: 200px;
+  background-image: url('./images/transT.PNG');
+  background-size: contain;
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
 
 .programT {
   float: left;
-  width: 150px;
-  height: 100px;
-  margin: 10px 20px;
-  border: solid 2px black;
-  shape-outside: polygon(
-    10% 0,
-    90% 0,
-    100% 10%,
-    100% 30%,
-    90% 40%,
-    90% 100%,
-    10% 100%,
-    10% 40%,
-    0 30%,
-    0 10%
-  );
-  clip-path: polygon(
-    10% 0,
-    90% 0,
-    100% 10%,
-    100% 30%,
-    90% 40%,
-    90% 100%,
-    10% 100%,
-    10% 40%,
-    0 30%,
-    0 10%
-  );
-  background: black;
-}
-.programT::before {
-  content: "";
-  display: block;
-  position: relative;
-  height: 98px;
-  width: 148px;
-  top: 0.1px;
-  left: 0.1px;
-  background-color: white;
-  clip-path: polygon(
-    10% 0,
-    88.5% 0%,
-    98.5% 10%,
-    98.5% 28%,
-    88.5% 38%,
-    88.5% 98%,
-    10% 98%,
-    10% 38%,
-    0 28%,
-    0 10%
-  );
+  width: 300px;
+  height: 200px;
+  background-image: url('./images/progT.PNG');
+  background-size: contain;
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
 
 .machineT {
   float: left;
-  width: 150px;
-  height: 100px;
-  margin: 0 20px;
-  border: solid 2px black;
-  shape-outside: polygon(
-    0 0,
-    100% 0,
-    100% 50%,
-    50% 100%,
-    0 50%
-  );
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 50%,
-    50% 100%,
-    0 50%
-  );
-  background: black;
-}
-.machineT::before {
-  content: "";
-  display: block;
-  position: relative;
-  height: 98px;
-  width: 148px;
-  top: 0.1px;
-  left: 0.1px;
-  background-color: white;
-  clip-path: polygon(
-    0 0,
-    98.5% 0,
-    98.5% 48%,
-    49% 98%,
-    0 48%
-  );
+  width: 300px;
+  height: 200px;
+  background-image: url('./images/machT.PNG');
+  background-size: contain;
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
 
 .translatorJ {
   float: left;
-  width: 150px;
-  height: 100px;
+  width: 300px;
+  height: 200px;
   background-image: url('./images/transJ.PNG');
   background-size: contain;
   background-repeat:   no-repeat;
@@ -204,8 +144,8 @@ aside {
 
 .interpreterJ {
   float: left;
-  width: 150px;
-  height: 100px;
+  width: 300px;
+  height: 200px;
   background-image: url('./images/interJ.PNG');
   background-size: contain;
   background-repeat:   no-repeat;
@@ -232,16 +172,6 @@ aside {
   background-position: center center;
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.properties {
-  margin-top: 10px;
-}
-
 .key {
   color: lightslategray;
   display: flex;
@@ -252,21 +182,30 @@ aside {
 }
 
 .value {
-  color: darkslategray;
+  color: white;
   font-weight: bolder;
 }
 
 .no-data {
-  color: darkslategray;
+  color: lightslategray;
 }
 
-.canvas {
-  width: calc(100% - 200px);
-  height: 100%;
-  border: solid 1px lightgray;
-  border-top: none;
-  border-bottom: none;
-  position: relative;
+/*------ Style 1 ------*/
+#style1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#style1::-webkit-color-swatch {
+  border-radius: 15px;
+  border: none;
+}
+#style1::-moz-color-swatch {
+  border-radius: 15px;
+  border: none;
 }
 
 .buttons {

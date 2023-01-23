@@ -58,6 +58,7 @@ export function Toolbar() {
       />
       <br></br>
       <h3>J Diagram Shapes</h3>
+    
       <div
         className="shape translatorJ"
         data-shape={SHAPE_TYPES.TRANSJ}
@@ -82,7 +83,6 @@ export function Toolbar() {
         draggable
         onDragStart={handleDragStart}
       />
-      
     </aside>
   );
 }
