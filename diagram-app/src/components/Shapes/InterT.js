@@ -17,7 +17,7 @@ const boundBoxCallbackForRectangle = (oldBox, newBox) => {
   return newBox;
 };
 
-export function Rectangle({ id, isSelected, type, ...shapeProps }) {
+export function InterT({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
   const transformerRef = useRef();
 

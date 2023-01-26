@@ -26,7 +26,7 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
       return {
         x: 100,
         y: 150,
-        width: 300,
+        width: 150,
         height: 200
       };
     };
@@ -69,9 +69,9 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
           context.beginPath();
           context.beginPath();
           context.moveTo(100, 150);
-          context.lineTo(400, 150);
-          context.lineTo(400, 250);
-          context.lineTo(250, 350);
+          context.lineTo(250, 150);
+          context.lineTo(250, 250);
+          context.lineTo(175, 350);
           context.lineTo(100, 250);
           context.closePath();
           context.fillStrokeShape(shape);

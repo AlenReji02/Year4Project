@@ -26,7 +26,7 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
       return {
         x: 100,
         y: 150,
-        width: 300,
+        width: 350,
         height: 200
       };
     };
@@ -68,10 +68,10 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
         sceneFunc={(context, shape) => {
           context.beginPath();
           context.moveTo(100, 150);
-          context.lineTo(400, 150);
-          context.lineTo(400, 250);
-          context.lineTo(300, 250);
-          context.lineTo(300, 350);
+          context.lineTo(450, 150);
+          context.lineTo(450, 250);
+          context.lineTo(350, 250);
+          context.lineTo(350, 350);
           context.lineTo(200, 350);
           context.lineTo(200, 250);
           context.lineTo(100, 250);

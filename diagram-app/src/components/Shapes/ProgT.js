@@ -26,7 +26,7 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
       return {
         x: 70,
         y: 150,
-        width: 300,
+        width: 210,
         height: 200
       };
     };
@@ -68,11 +68,11 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
         sceneFunc={(context, shape) => {
           context.beginPath();
           context.moveTo(100, 150);
-          context.lineTo(340, 150);
-          context.lineTo(370, 175);
-          context.lineTo(370, 225);
-          context.lineTo(340, 250);
-          context.lineTo(340, 350);
+          context.lineTo(250, 150);
+          context.lineTo(280, 175);
+          context.lineTo(280, 225);
+          context.lineTo(250, 250);
+          context.lineTo(250, 350);
           context.lineTo(100, 350);
           context.lineTo(100, 250);
           context.lineTo(70, 225);

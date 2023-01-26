@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 import { SHAPE_TYPES } from "./constants";
 import { useShapes } from "./state";
 import { Circle } from "./Components/Shapes/Circle";
-import { Rectangle } from "./Components/Shapes/Rectangle";
+import { InterT } from "./Components/Shapes/InterT";
 import { TransT } from "./Components/Shapes/TransT";
 import { ProgT } from "./Components/Shapes/ProgT";
 import { MachT } from "./Components/Shapes/MachT";
@@ -20,7 +20,7 @@ export function Shape({ shape }) {
   const isSelected = useShapes(isSelectedSelector);
 
   if (shape.type === SHAPE_TYPES.RECT) {
-    return <Rectangle {...shape} isSelected={isSelected} />;
+    return <InterT {...shape} isSelected={isSelected} />;
   } else if (shape.type === SHAPE_TYPES.CIRCLE) {
     return <Circle {...shape} isSelected={isSelected} />;
   } else if (shape.type === SHAPE_TYPES.TRANST) {
