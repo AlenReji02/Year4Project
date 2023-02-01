@@ -28,15 +28,45 @@ export default function TDiagram(){
             </div>
             <br></br>
             <div className="card-container">
-            <div className="card-image-container">
-                <img src="image1.jpg" alt="Image 1" className="card-image" />
-                <img src="image2.jpg" alt="Image 2" className="card-image" />
+                <div className="card-image-container">
+                    <img src={transT} alt="Image 1" className="card-image" />
+                    <img src={transT} alt="Image 2" className="card-image" />
+                </div>
+                <div className="card-text">
+                    <h3>Composition of T Diagram Shapes</h3>
+                    <p>Some card text goes here</p>
+                </div>
             </div>
-            <div className="card-text">
-                <h3>Card Title</h3>
-                <p>Some card text goes here</p>
+            <br></br>
+            <div className="heading-container">
+                <h1 className="heading-title">{"EXAMPLE USE CASES"}</h1>
             </div>
+            <h2 className="use-case-subtitle">{"Running Programs on a Machine"}</h2>
+            <br></br>
+            <div className="card-container">
+                <div className="card-image-container">
+                    <img src={transT} alt="Image 1" className="card-image" />
+                    <img src={transT} alt="Image 2" className="card-image" />
+                </div>
+                <div className="card-text">
+                    <h3>Composition of T Diagram Shapes</h3>
+                    <p>Some card text goes here</p>
+                </div>
             </div>
+            <br></br>
+            <h2 className="use-case-subtitle">{"Translating Programs"}</h2>
+            <br></br>
+            <div className="card-container">
+                <div className="card-image-container">
+                    <img src={transT} alt="Image 1" className="card-image" />
+                    <img src={transT} alt="Image 2" className="card-image" />
+                </div>
+                <div className="card-text">
+                    <h3>Composition of T Diagram Shapes</h3>
+                    <p>Some card text goes here</p>
+                </div>
+            </div>
+            <br></br>
         </>
     );    
 }

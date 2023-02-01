@@ -39,6 +39,11 @@
     color: #333;
   }
 
+  .use-case-subtitle {
+    text-align: left;
+    padding-left: 30px;
+  }
+
   .diagram-key{
     padding: 2px;
     display: flex;
