@@ -3,8 +3,9 @@ import '../diagrams.css';
 import Navbar from '../Components/Navbar';
 import Infocard from '../Components/Infocard';
 
-import transJ from '../images/transJ.PNG';
-import interJ from '../images/interJ.PNG';
+import transx from '../images/transJ.PNG';
+import transJ from '../images/j-page-images/transJ.png';
+import interJ from '../images/j-page-images/interJ.png';
 import compJ from '../images/compJ.PNG';
 import machJ from '../images/machJ.PNG';
 
@@ -29,8 +30,8 @@ export default function TDiagram(){
             <br></br>
             <div className="card-container">
                 <div className="card-image-container">
-                    <img src={transJ} alt="Image 1" className="card-image" />
-                    <img src={transJ} alt="Image 2" className="card-image" />
+                    <img src={transx} alt="Image 1" className="card-image" />
+                    <img src={transx} alt="Image 2" className="card-image" />
                 </div>
                 <div className="card-text">
                     <h3>Composition of T Diagram Shapes</h3>
@@ -45,8 +46,8 @@ export default function TDiagram(){
             <br></br>
             <div className="card-container">
                 <div className="card-image-container">
-                    <img src={transJ} alt="Image 1" className="card-image" />
-                    <img src={transJ} alt="Image 2" className="card-image" />
+                    <img src={transx} alt="Image 1" className="card-image" />
+                    <img src={transx} alt="Image 2" className="card-image" />
                 </div>
                 <div className="card-text">
                     <h3>Composition of T Diagram Shapes</h3>
@@ -58,8 +59,8 @@ export default function TDiagram(){
             <br></br>
             <div className="card-container">
                 <div className="card-image-container">
-                    <img src={transJ} alt="Image 1" className="card-image" />
-                    <img src={transJ} alt="Image 2" className="card-image" />
+                    <img src={transx} alt="Image 1" className="card-image" />
+                    <img src={transx} alt="Image 2" className="card-image" />
                 </div>
                 <div className="card-text">
                     <h3>Composition of T Diagram Shapes</h3>

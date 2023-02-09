@@ -4,9 +4,11 @@ import Navbar from '../Components/Navbar';
 import Infocard from '../Components/Infocard';
 
 import transT from '../images/transT.PNG';
-import interT from '../images/interT.PNG';
-import progT from '../images/progT.PNG';
-import machT from '../images/machT.PNG';
+import interT from '../images/t-page-images/interT.png';
+import progT from '../images/t-page-images/progT.png';
+import machT from '../images/t-page-images/machT.png';
+import compT from '../images/t-page-images/compT.png';
+import hcomp from '../images/t-page-images/horizontal.png';
 
 export default function TDiagram(){
     return (
@@ -21,10 +23,23 @@ export default function TDiagram(){
             </div>
             <br></br>
             <div className="diagram-key">
-                <Infocard img={transT} title="Compiler" text="A compiler which translates from a source language S, to a target language T. The compiler itself is expressed in the langauge L."/>
+                <Infocard img={compT} title="Compiler" text="A compiler which translates from a source language S, to a target language T. The compiler itself is expressed in the langauge L."/>
                 <Infocard img={interT} title="Interpreter" text="An interpreter for the source language S which itself is expressed in the language L."/>
                 <Infocard img={progT} title="Program" text="A program P expressed in the language L."/>
                 <Infocard img={machT} title="Machine" text="A machine M which can only run machine code specific to M."/>
+            </div>
+            <br></br>
+            <div className="heading-container">
+                <h1 className="heading-title">{"COMPOSITION OF T SHAPES"}</h1>
+            </div>
+            <div className="card-container">
+                <div className="card-image-container">
+                    <img src={hcomp} alt="Image 1" className="card-image" />
+                </div>
+                <div className="card-text">
+                    <h3>Horizontal Composition</h3>
+                    <p>Some card text goes here</p>
+                </div>
             </div>
             <br></br>
             <div className="card-container">
@@ -33,7 +48,7 @@ export default function TDiagram(){
                     <img src={transT} alt="Image 2" className="card-image" />
                 </div>
                 <div className="card-text">
-                    <h3>Composition of T Diagram Shapes</h3>
+                    <h3>Diagonal Composition</h3>
                     <p>Some card text goes here</p>
                 </div>
             </div>

@@ -1,5 +1,12 @@
+import '../diagrams.css';
+
+import Navbar from '../Components/Navbar';
+
 export function EditorHelp(){
     return (
-        <h1></h1>
+        <>
+            <Navbar />
+            <br></br>
+        </>
     );    
 }

@@ -55,6 +55,7 @@ a, a:hover, a:visited, a:active {
   position: relative;
   height: 100vh;
   flex: 1;
+  background-color: white;
 }
 
 .panel {
@@ -75,6 +76,7 @@ h2, .selected{
 .info {
   height: 25%;
   text-align: center;
+  border:2px solid white;
 }
 
 .properties {

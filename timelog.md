@@ -168,3 +168,165 @@
 
 * *2 hour* Fixed transformer issue with custom shapes
 * *3 hour* Added panning and zooming functionality to canvas
+* *2 hour* Deleted toolbar components, changed shapes from HTML to images
+
+
+## Week 10
+
+## 7 Dec 2022
+
+* *2 hour* Adjust transformer and extend fixed transformer to all shape components
+* *1 hour* Define selfRects for all shapes such that transformer works for all shapes
+* *1 hour* Fixed buggy rendering of separat transformer from its shape
+
+## 8 Dec 2022
+
+* *3 hour* Define and implement custom shapes with quadratic curves for J Diagram
+
+## 9 Dec 2022
+
+* *0.5 hour* online meeting with supervisor
+* *4 hour* Implement most J Diagram shapes
+
+## 10 Dec 2022
+
+* *1 hour* Add J Diagram shapes to toolbar
+
+
+## Week 11
+
+## 12 Dec 2022
+
+* *3 hour* Fix bugs with J Diagram rendering
+
+## 13 Dec 2022
+
+* *2 hour* Change sceneFunc for J Diagram shapes to be consistent with other J Diagram shapes
+* *1 hour* Define selfRects for J Diagram shapes
+
+## 16 Dec 2022
+
+* No meeting with supervisor
+* *2 hour* Resize shapes for consistency and rename some shapes
+
+
+## Week 12
+
+## 19 Dec 2022
+
+* *2.5 hour* Add Support pages and begin designing components for them
+
+## 20 Dec 2022
+
+* *1 hour* Design Navbar and Infocard components
+* *2 hour* Design Support page for T Diagrams
+
+## 22 Dec 2022
+
+* No meeting with supervisor - Christmas break
+* *2 hour* Design Support page for J Diagrams
+
+
+## Week 13
+
+## 27 Dec 2022
+
+* *2 hour* Design Support page for Editor use
+* *3 hour* Create images and gifs for support pages and adjust css
+
+## 28 Dec 2022
+
+* *1 hour* Add support pages to navbar
+* *1 hour* Add React-Router to project for navigation
+
+## 29 Dec 2022
+
+* No meeting with supervisor - Christmas break
+* *1 hour* Add text to test shape
+
+
+## Week 14
+
+## 3 Jan 2023
+
+* *3 hour* Add text to one test shape and implement the text moving with the shape
+
+## 4 Jan 2023
+
+* *1 hour* Remove resizability completely due to canvas zooming
+* *1 hour* Remove transformers for easier use
+* *2 hour* Add source, target, and language text to test shape with correct positioning
+
+## 5 Jan 2023
+
+* No meeting with supervisor - Christmas break
+* *2 hour* Bug fix for only source text moving with the shape
+
+## 6 Jan 2023
+
+* *2 hour* Bug fix for separate onClick handlers for shape group, shape, and shape text
+
+
+## Week 15
+
+## 9 Jan 2023
+
+* *4 hour* Add text to all test shapes and implement the text moving with the shape
+
+## 10 Jan 2023
+
+* *2 hour* Bug fix for text not moving with shape depending on click location
+
+## 12 Jan 2023
+
+* No meeting with supervisor - meeting cancelled
+* *2 hour* Attempt storing shape text globally - didnt work
+
+
+## Week 16
+
+## 16 Jan 2023
+
+* *4 hour* Read up on state and implement state for each text component on each shape
+
+## 17 Jan 2023
+
+* *2 hour* Test state update onClick for text
+* *1 hour* Fix bug where state update causes text reposition
+
+## 19 Jan 2023
+
+* *1 hour* meeting with supervisor
+* *2 hour* Clean up CSS and finish T and J Diagram support pages fully
+
+## 20 Jan 2023
+
+* *4 hour* Test snapping methods for correctness and usability
+
+## 21 Jan 2023
+
+* *2 hour* Test shape hit detection
+
+## 22 Jan 2023
+
+* *2 hour* Test shape snap point recognition
+
+
+## Week 17
+
+## 23 Jan 2023
+
+* *2 hour* Test shape snapping, eventually discard snapping method
+* *2 hour* Fully finish editor support page
+
+## 24 Jan 2023
+
+* *2 hour* Design evaluation
+* *1 hour* Fix css bugs and html layout on support pages
+
+## 26 Jan 2023
+
+* *1 hour* meeting with supervisor
+
+
+## Week 18
