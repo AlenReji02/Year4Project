@@ -122,6 +122,15 @@
     padding: 10px;
     margin: 0 10px;
 }
+
+.single-card-image {
+    max-width: 60%;
+    max-height: 90%;
+    object-fit: cover;
+    padding: 10px;
+    margin: 0 10px;
+}
+
 .card-text {
     width: 50%;
     padding: 10px;
@@ -132,8 +141,9 @@ p, .card-text {
   color: white;
 }
 
-h3, .card-text {
+.card-text h3 {
   color: #666;
 }
+
 
   

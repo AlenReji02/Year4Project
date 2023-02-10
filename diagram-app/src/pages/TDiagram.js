@@ -9,6 +9,11 @@ import progT from '../images/t-page-images/progT.png';
 import machT from '../images/t-page-images/machT.png';
 import compT from '../images/t-page-images/compT.png';
 import hcomp from '../images/t-page-images/horizontal.png';
+import ex_hcomp from '../images/t-page-images/ex_horiz.png';
+import ex_dcomp from '../images/t-page-images/ex_diag.png';
+import ex_dcompw from '../images/t-page-images/ex_diagw.png';
+import ex_vertcom1 from '../images/t-page-images/ex_vert1.png';
+import ex_vertcom2 from '../images/t-page-images/ex_vert2.png';
 
 export default function TDiagram(){
     return (
@@ -35,21 +40,39 @@ export default function TDiagram(){
             <div className="card-container">
                 <div className="card-image-container">
                     <img src={hcomp} alt="Image 1" className="card-image" />
+                    <img src={ex_hcomp} alt="Image 1" className="card-image" />
                 </div>
                 <div className="card-text">
                     <h3>Horizontal Composition</h3>
-                    <p>Some card text goes here</p>
+                    <p>This form of composition signifies that the output of the first compiler is the input of the second. The example on the right shows
+                        Haskell to C using a Java compiler and then C to ARM assembly using another Java compiler. Note that the output (target) of the left and the input of the right (source) must match. </p>
                 </div>
             </div>
             <br></br>
             <div className="card-container">
                 <div className="card-image-container">
-                    <img src={transT} alt="Image 1" className="card-image" />
-                    <img src={transT} alt="Image 2" className="card-image" />
+                    <img src={ex_dcomp} alt="Image 1" className="card-image" />
+                    <img src={ex_dcompw} alt="Image 2" className="card-image" />
                 </div>
                 <div className="card-text">
                     <h3>Diagonal Composition</h3>
-                    <p>Some card text goes here</p>
+                    <p>Diagonal composition signifies that a compiler itself is compiled using a second compiler. Note that diagonal composition only works
+                        one way - the left T shape above the right and not vice versa. Also note that for diagonal composition, the implementation language of the first compiler
+                        must be the input for the second.
+                    </p>
+                </div>
+            </div>
+            <br></br>
+            <div className="card-container">
+                <div className="card-image-container">
+                    <img src={ex_vertcom1} alt="Image 1" className="card-image" />
+                    <img src={ex_vertcom2} alt="Image 2" className="card-image" />
+                </div>
+                <div className="card-text">
+                    <h3>Vertical Composition</h3>
+                    <p>Vertical composition is used for interpreting programs or compilers and also for running programs, compilers and interpreters on machines.
+                        For this form of composition, the languages on either side of the boundary of the attached components (highlighted green) must match.
+                    </p>
                 </div>
             </div>
             <br></br>
@@ -82,6 +105,15 @@ export default function TDiagram(){
                 </div>
             </div>
             <br></br>
+            <div className="card-container">
+                <div className="card-image-container">
+                    <img src={transT} alt="Image" className="single-card-image" />
+                </div>
+                <div className="card-text">
+                    <h3>Diagonal Composition</h3>
+                    <p>Some card text goes here</p>
+                </div>
+            </div>
         </>
     );    
 }
