@@ -31,16 +31,17 @@ export function InterT({ id, isSelected, type, ...shapeProps }) {
 
   useEffect(() => {
     if (shapeRef.current) {
-      const { x, y, width, height } = shapeRef.current.getClientRect();
+      const pos = shapeRef.current.position();
+      
       setsrctext({
         ...srctext,
-        x: x + 25,
-        y: y + 40
+        x: pos.x + 25,
+        y: pos.y + 40
       });
       setlngtext({
         ...lngtext,
-        x: x + 25,
-        y: y + 140
+        x: pos.x + 25,
+        y: pos.y + 140
       });
     }
   }, [shapeRef.current]);

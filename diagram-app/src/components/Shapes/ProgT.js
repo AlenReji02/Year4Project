@@ -31,16 +31,17 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
 
   useEffect(() => {
     if (shapeRef.current) {
-      const { x, y, width, height } = shapeRef.current.getClientRect();
+      const pos = shapeRef.current.position();
+      
       setprgtext({
         ...prgtext,
-        x: x + 55,
-        y: y + 35
+        x: pos.x + 125,
+        y: pos.y + 195
       });
       setlngtext({
         ...lngtext,
-        x: x + 55,
-        y: y + 135
+        x: pos.x + 125,
+        y: pos.y + 290
       });
     }
   }, [shapeRef.current]);

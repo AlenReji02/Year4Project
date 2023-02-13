@@ -36,21 +36,22 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
 
   useEffect(() => {
     if (shapeRef.current) {
-      const { x, y, width, height } = shapeRef.current.getClientRect();
+      const pos = shapeRef.current.position();
+
       setsrctext({
         ...srctext,
-        x: x + 25,
-        y: y + 35
+        x: pos.x + 115,
+        y: pos.y + 185
       });
       settgttext({
         ...tgttext,
-        x: x + 225,
-        y: y + 35
+        x: pos.x + 335,
+        y: pos.y + 185
       });
       setlngtext({
         ...lngtext,
-        x: x + 125,
-        y: y + 135
+        x: pos.x + 225,
+        y: pos.y + 285
       });
     }
   }, [shapeRef.current]);
@@ -198,8 +199,8 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
           )}
         </Html>
         <Arrow
-          x={srctext.x + 100}
-          y={srctext.y + 15}
+          x={srctext.x + 110}
+          y={srctext.y + 12}
           points={[0, 0, 100, 0]}
           fill="black"
           stroke="black"

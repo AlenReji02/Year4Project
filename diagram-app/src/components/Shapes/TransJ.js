@@ -36,21 +36,22 @@ export function TransJ({ id, isSelected, type, ...shapeProps }) {
 
   useEffect(() => {
     if (shapeRef.current) {
-      const { x, y, width, height } = shapeRef.current.getClientRect();
+      const pos = shapeRef.current.position();
+      
       setsrctext({
         ...srctext,
-        x: x + 20,
-        y: y + 30
+        x: pos.x + 120,
+        y: pos.y + 180
       });
       settgttext({
         ...tgttext,
-        x: x + 180,
-        y: y + 30
+        x: pos.x + 280,
+        y: pos.y + 180
       });
       setlngtext({
         ...lngtext,
-        x: x + 180,
-        y: y + 150
+        x: pos.x + 280,
+        y: pos.y + 300
       });
     }
   }, [shapeRef.current]);

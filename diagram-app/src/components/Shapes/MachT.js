@@ -24,11 +24,12 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
 
   useEffect(() => {
     if (shapeRef.current) {
-      const { x, y, width, height } = shapeRef.current.getClientRect();
+      const pos = shapeRef.current.position();
+      
       setlngtext({
         ...lngtext,
-        x: x + 30,
-        y: y + 50
+        x: pos.x + 125,
+        y: pos.y + 205
       });
     }
   }, [shapeRef.current]);
