@@ -4,6 +4,7 @@ import { Toolbar } from "./Components/Toolbar";
 import { Canvas } from "./Components/Canvas";
 import { Properties } from "./Components/Properties";
 
+import "./index.css";
 
 function App() {
   return (

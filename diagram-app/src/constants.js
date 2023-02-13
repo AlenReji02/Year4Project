@@ -1,10 +1,10 @@
 export const SHAPE_TYPES = {
-  RECT: "rect",
+  RECT: "interT",
   CIRCLE: "circle",
   TRANST: "compT",
   PROGT: "progT",
   MACHT: "machT",
-  TRANSJ: "compJ",
+  TRANSJ: "transJ",
   INTERJ: "interJ",
   COMPJ: "compJ",
   MACHJ: "machJ"

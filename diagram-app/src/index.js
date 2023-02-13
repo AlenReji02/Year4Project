@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import "./index.css";
-
 import App from "./App";
 import { EditorHelp } from "./pages/EditorHelp";
 import TDiagram from "./pages/TDiagram";

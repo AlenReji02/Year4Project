@@ -14,11 +14,6 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
     x: 0,
     y: 0
   });
-  const [seltext, setseltext] = useState({
-    text: null,
-    x: 0,
-    y: 0
-  });
 
   const [editing, setEditing] = useState(false);
 

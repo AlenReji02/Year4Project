@@ -19,17 +19,15 @@ export const useShapes = createStore(() => {
 });
 const setState = (fn) => useShapes.set(produce(fn));
 
-export const saveDiagram = () => {
-  const state = useShapes.get();
-
-  localStorage.setItem(APP_NAMESPACE, JSON.stringify(state.shapes));
-};
-
 export const reset = () => {
   localStorage.removeItem(APP_NAMESPACE);
 
   useShapes.set(baseState);
 };
+
+export const refreshPage = () => {
+  window.location.reload(false);
+}
 
 export const createRectangle = ({ x, y }) => {
   setState((state) => {

@@ -13,7 +13,7 @@ import {
   createInterJ,
   createCompJ,
   createMachJ,
-  saveDiagram,
+  refreshPage,
   reset
 } from "../state";
 import { DRAG_DATA_KEY, SHAPE_TYPES } from "../constants";
@@ -25,6 +25,25 @@ export function Canvas() {
   const shapes = useShapes((state) => Object.entries(state.shapes));
   const scaleBy = 1.01;
   const stageRef = useRef();
+
+  window.onresize = function(event) {
+    refreshPage();
+  };
+
+  const download = useCallback((event) => {
+    var filename = prompt("Enter a filename for the image:", "stage.png");
+    if (!filename) {
+      return;
+    }
+    var dataURL = stageRef.current.toDataURL({ pixelRatio: 3 });
+
+    var link = document.createElement("a");
+    link.download = filename;
+    link.href = dataURL;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
 
   const handleDrop = useCallback((event) => {
     const draggedData = event.nativeEvent.dataTransfer.getData(DRAG_DATA_KEY);
@@ -116,7 +135,7 @@ export function Canvas() {
   return (
     <main className="canvas" onDrop={handleDrop} onDragOver={handleDragOver}>
       <div className="buttons">
-        <button onClick={saveDiagram}>Save</button>
+        <button onClick={download}>Save</button>
         <button onClick={reset}>Reset</button>
       </div>
       <Stage

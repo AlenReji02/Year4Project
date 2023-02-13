@@ -24,7 +24,7 @@ aside {
   background-color: #282C2F;
 }
 
-aside h2, aside h3 {
+aside h2, aside h3, aside h4 {
   text-decoration: none;
   color: white;
   text-shadow: -1px 1px 0 #000,
