@@ -21,6 +21,7 @@ import ex_inter from '../images/t-page-images/ex_inter.png';
 import issue1 from '../images/t-page-images/issue1.png';
 import issue2a from '../images/t-page-images/issue2a.png';
 import issue2b from '../images/t-page-images/issue2b.png';
+import ex_emul from '../images/t-page-images/ex_emul.png';
 
 export default function TDiagram(){
     return (
@@ -44,7 +45,7 @@ export default function TDiagram(){
             <br></br>
             <br></br>
             <div className="heading-container">
-                <h1 className="heading-title">{"COMPOSITION SYNTAX OF T DIAGRAMS"}</h1>
+                <h1 className="heading-title">{"COMPOSITION SYNTAX"}</h1>
             </div>
             <br></br>
             <div className="card-container">
@@ -153,6 +154,20 @@ export default function TDiagram(){
                 </div>
             </div>
             <br></br>
+            <h2 className="use-case-subtitle">{"Emulation / Compiling an Interpreter"}</h2>
+            <br></br>
+            <div className="card-container">
+                <div className="card-image-container">
+                    <img src={ex_emul} alt="Image" className="single-card-image" />
+                </div>
+                <div className="card-text">
+                    <h2><p>Interpreters can also be compiled such that they execute code in another language.
+                        Here, an interpreter is made that interprets a new programming language 'NL' to C. This 
+                        interpreter is translated using a C to x86 compiler such that it is now a NL to x86 interpreter. 
+                        The rightmost shape is once again the product.</p></h2>
+                </div>
+            </div>
+            <br></br>
             <br></br>
             <div className="heading-container">
                 <h1 className="heading-title">{"PROBLEMS ENCOUNTERED WHEN USING T DIAGRAMS"}</h1>
@@ -184,6 +199,7 @@ export default function TDiagram(){
                         is the source for the second compiler. i.e. (using the images) C and D must be the same.</p></h2>
                 </div>
             </div>
+            <br></br>
         </>
     );    
 }

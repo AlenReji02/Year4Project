@@ -56,13 +56,13 @@ export function Properties() {
       </div>
       
       <div className="info">
-        <h3>Support</h3>
+        <h2>Support</h2>
         <br></br>
-        <h4><Link to='/editor'>Using the editor</Link></h4>
+        <h3><Link to='/editor'>Using the editor</Link></h3>
         <br></br>
-        <h4><Link to='/t-diagrams'>T Diagrams</Link></h4>
+        <h3><Link to='/t-diagrams'>T Diagrams</Link></h3>
         <br></br>
-        <h4><Link to='/j-diagrams'>J Diagrams</Link></h4>
+        <h3><Link to='/j-diagrams'>J Diagrams</Link></h3>
       </div>
     </aside>
   );

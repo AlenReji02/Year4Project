@@ -56,56 +56,52 @@ export function Canvas() {
       stageRef.current.setPointersPositions(event);
 
       const coords = stageRef.current.getPointerPosition();
+      const invertedTransform = stageRef.current.getAbsoluteTransform().copy().invert();
+      const icoords = invertedTransform.point(coords);
 
       if (type === SHAPE_TYPES.RECT) {
         // rectangle x, y is at the top,left corner
         createRectangle({
-          x: coords.x - offsetX,
-          y: coords.y - offsetY
-        });
-      } else if (type === SHAPE_TYPES.CIRCLE) {
-        // circle x, y is at the center of the circle
-        createCircle({
-          x: coords.x - (offsetX - clientWidth / 2),
-          y: coords.y - (offsetY - clientHeight / 2)
+          x: icoords.x,
+          y: icoords.y
         });
       } else if (type === SHAPE_TYPES.TRANST) {
         // circle x, y is at the center of the circle
         createTransT({
-          x: coords.x - 100,
-          y: coords.y - 150
+          x: icoords.x - 100,
+          y: icoords.y - 150
         });
       } else if (type === SHAPE_TYPES.PROGT) {
         // circle x, y is at the center of the circle
         createProgT({
-          x: coords.x - 100,
-          y: coords.y - 150
+          x: icoords.x - 100,
+          y: icoords.y - 150
         });
       } else if (type === SHAPE_TYPES.MACHT) {
         // circle x, y is at the center of the circle
         createMachT({
-          x: coords.x - 100,
-          y: coords.y - 150
+          x: icoords.x - 100,
+          y: icoords.y - 150
         });
       } else if (type === SHAPE_TYPES.TRANSJ) {
         createTransJ({
-          x: coords.x - 100,
-          y: coords.y - 150
+          x: icoords.x - 100,
+          y: icoords.y - 150
         });
       } else if (type === SHAPE_TYPES.INTERJ) {
         createInterJ({
-          x: coords.x - 100,
-          y: coords.y - 150
+          x: icoords.x - 100,
+          y: icoords.y - 150
         });
       } else if (type === SHAPE_TYPES.COMPJ) {
         createCompJ({
-          x: coords.x - 100,
-          y: coords.y - 150
+          x: icoords.x - 100,
+          y: icoords.y - 150
         });
       } else if (type === SHAPE_TYPES.MACHJ) {
         createMachJ({
-          x: coords.x - 100,
-          y: coords.y - 150
+          x: icoords.x - 100,
+          y: icoords.y - 150
         });
       }
     }
