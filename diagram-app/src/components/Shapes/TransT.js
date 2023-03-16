@@ -6,6 +6,14 @@ import { selectShape, moveShape } from "../../state";
 
 export function TransT({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
+  const transformerRef = useRef();
+
+  useEffect(() => {
+    if (isSelected) {
+      transformerRef.current.nodes([shapeRef.current]);
+      transformerRef.current.getLayer().batchDraw();
+    }
+  }, [isSelected]);
   
   const srctextRef = useRef();
   const tgttextRef = useRef();
@@ -207,6 +215,15 @@ export function TransT({ id, isSelected, type, ...shapeProps }) {
           strokeWidth={2}
         />
       </Group>
+      {isSelected && (
+        <Transformer
+          anchorSize={5}
+          borderDash={[6, 2]}
+          enabledAnchors={[]}
+          rotateEnabled={false}
+          ref={transformerRef}
+        />
+      )}
     </>
   );
 }

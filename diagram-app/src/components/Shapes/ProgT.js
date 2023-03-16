@@ -7,6 +7,14 @@ import { selectShape, moveShape, transformTransTShape } from "../../state";
 
 export function ProgT({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
+  const transformerRef = useRef();
+
+  useEffect(() => {
+    if (isSelected) {
+      transformerRef.current.nodes([shapeRef.current]);
+      transformerRef.current.getLayer().batchDraw();
+    }
+  }, [isSelected]);
   
   const prgtextRef = useRef();
   const lngtextRef = useRef();
@@ -177,6 +185,15 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
           )}
         </Html>
       </Group>
+      {isSelected && (
+        <Transformer
+          anchorSize={5}
+          borderDash={[6, 2]}
+          enabledAnchors={[]}
+          rotateEnabled={false}
+          ref={transformerRef}
+        />
+      )}
     </>
   );
 }

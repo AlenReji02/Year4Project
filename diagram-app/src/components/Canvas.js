@@ -14,6 +14,7 @@ import {
   createCompJ,
   createMachJ,
   refreshPage,
+  deleteShape,
   reset
 } from "../state";
 import { DRAG_DATA_KEY, SHAPE_TYPES } from "../constants";
@@ -133,6 +134,7 @@ export function Canvas() {
       <div className="buttons">
         <button onClick={download}>Save</button>
         <button onClick={reset}>Reset</button>
+        <button onClick={deleteShape}>Delete</button>
       </div>
       <Stage
         ref={stageRef}

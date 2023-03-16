@@ -14,6 +14,8 @@ export function EditorHelp(){
         <>
             <Navbar />
             <br></br>
+            <br></br>
+            <br></br>
             <div className="heading-container">
                 <h1 className="heading-title">{"USING THE DIAGRAM EDITOR"}</h1>
             </div>

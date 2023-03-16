@@ -21,6 +21,8 @@ export default function TDiagram(){
         <>
             <Navbar />
             <br></br>
+            <br></br>
+            <br></br>
             <div className="heading-container">
                 <h1 className="heading-title">{"J DIAGRAMS"}</h1>
                 <h2 className="heading-subtitle">{

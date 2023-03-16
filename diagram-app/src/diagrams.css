@@ -12,6 +12,8 @@
 
   .Navbar {
     display: flex;
+    position: fixed;
+    width: 100%;
     justify-content: center;
     background-color: #282C2F;
     border-radius: 10px;

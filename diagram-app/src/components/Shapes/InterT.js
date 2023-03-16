@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useCallback, useState } from "react";
-import { Rect as KonvaRectangle, Group, Text } from "react-konva";
+import { Rect as KonvaRectangle, Group, Text, Transformer } from "react-konva";
 import { Html } from "react-konva-utils";
 
 import { LIMITS } from "../../constants";
@@ -7,6 +7,14 @@ import { selectShape, moveShape } from "../../state";
 
 export function InterT({ id, isSelected, type, ...shapeProps }) {
   const shapeRef = useRef();
+  const transformerRef = useRef();
+
+  useEffect(() => {
+    if (isSelected) {
+      transformerRef.current.nodes([shapeRef.current]);
+      transformerRef.current.getLayer().batchDraw();
+    }
+  }, [isSelected]);
   
   const srctextRef = useRef();
   const lngtextRef = useRef();
@@ -150,6 +158,16 @@ export function InterT({ id, isSelected, type, ...shapeProps }) {
           )}
         </Html>
       </Group>
+      {isSelected && (
+        <Transformer
+          anchorSize={5}
+          borderDash={[6, 2]}
+          padding = {1}
+          enabledAnchors={[]}
+          rotateEnabled={false}
+          ref={transformerRef}
+        />
+      )}
     </>
   );
 }
