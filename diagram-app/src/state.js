@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 
 import { SHAPE_TYPES, DEFAULTS, LIMITS } from "./constants";
 
-const APP_NAMESPACE = "__integrtr_diagrams__";
+const APP_NAMESPACE = "__T_diagrams__";
 
 const baseState = {
   selected: null,

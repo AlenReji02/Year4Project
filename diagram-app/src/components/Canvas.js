@@ -20,17 +20,27 @@ import {
 import { DRAG_DATA_KEY, SHAPE_TYPES } from "../constants";
 import { Shape } from "../Shape";
 
+// Prevent default dragover behaviour to allow drop
 const handleDragOver = (event) => event.preventDefault();
 
+// Canvas component
 export function Canvas() {
+
+  // Get shapes from state
   const shapes = useShapes((state) => Object.entries(state.shapes));
+
+  // Zoom Scale
   const scaleBy = 1.01;
+
+  // Stage Ref
   const stageRef = useRef();
 
+  // Refresh page on window resize to fix element ratio
   window.onresize = function(event) {
     refreshPage();
   };
 
+  // Download Canvas as image
   const download = useCallback((event) => {
     var filename = prompt("Enter a filename for the image:", "stage.png");
     if (!filename) {
@@ -46,40 +56,44 @@ export function Canvas() {
     document.body.removeChild(link);
   });
 
+  // Handler for dropping shapes onto canvas]
   const handleDrop = useCallback((event) => {
+
+    // Receive dragged data
     const draggedData = event.nativeEvent.dataTransfer.getData(DRAG_DATA_KEY);
 
+    // Unpack data
     if (draggedData) {
       const { offsetX, offsetY, type, clientHeight, clientWidth } = JSON.parse(
         draggedData
       );
 
+      // Grab Pointer Position
       stageRef.current.setPointersPositions(event);
-
       const coords = stageRef.current.getPointerPosition();
+
+      // Adjust Pointer Position for zoom and pan level
       const invertedTransform = stageRef.current.getAbsoluteTransform().copy().invert();
       const icoords = invertedTransform.point(coords);
 
+      // Pass coords to shape creation function based on type
+      // Created shapes are added to state
       if (type === SHAPE_TYPES.RECT) {
-        // rectangle x, y is at the top,left corner
         createRectangle({
           x: icoords.x,
           y: icoords.y
         });
       } else if (type === SHAPE_TYPES.TRANST) {
-        // circle x, y is at the center of the circle
         createTransT({
           x: icoords.x - 100,
           y: icoords.y - 150
         });
       } else if (type === SHAPE_TYPES.PROGT) {
-        // circle x, y is at the center of the circle
         createProgT({
           x: icoords.x - 100,
           y: icoords.y - 150
         });
       } else if (type === SHAPE_TYPES.MACHT) {
-        // circle x, y is at the center of the circle
         createMachT({
           x: icoords.x - 100,
           y: icoords.y - 150
@@ -108,8 +122,14 @@ export function Canvas() {
     }
   }, []);
 
+  // Event handler for zooming in and out
   function zoomStage(event) {
+
+    // Disable default scroll behaviour
     event.evt.preventDefault();
+
+    // Grabs current stage scale and updates it
+    //Updates stage position to keep mouse in same place
     if (stageRef.current !== null) {
       const stage = stageRef.current;
       const oldScale = stage.scaleX();
@@ -129,6 +149,8 @@ export function Canvas() {
     }
   }
 
+  // Returns Canvas element with buttons and shapes
+  // Shapes are rendered in on Layer by iterating through shape state
   return (
     <main className="canvas" onDrop={handleDrop} onDragOver={handleDragOver}>
       <div className="buttons">
