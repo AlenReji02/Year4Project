@@ -4,10 +4,14 @@ import { Html } from "react-konva-utils";
 
 import { selectShape, moveShape } from "../../state";
 
+// T Diagram Machine Component
 export function MachT({ id, isSelected, type, ...shapeProps }) {
+
+  // Shape and Transformer Refs
   const shapeRef = useRef();
   const transformerRef = useRef();
 
+  // Update Transformer on Shape Select
   useEffect(() => {
     if (isSelected) {
       transformerRef.current.nodes([shapeRef.current]);
@@ -15,16 +19,20 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
     }
   }, [isSelected]);
   
+  // Text Refs
   const lngtextRef = useRef();
 
+  // Text States
   const [lngtext, setlngtext] = useState({
     text: "language",
     x: 0,
     y: 0
   });
 
+  // Text Editing State
   const [editing, setEditing] = useState(false);
 
+  // Update Text Positions on Shape Move
   useEffect(() => {
     if (shapeRef.current) {
       const pos = shapeRef.current.position();
@@ -37,6 +45,7 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
     }
   }, [shapeRef.current]);
 
+  // Define Self Rect for Shape
   useEffect(() => {
     shapeRef.current.getSelfRect = () => {
       return {
@@ -48,6 +57,7 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
     };
   }, []);
 
+  // Define Select, Drag, and DblClick Event Handlers
   const handleSelect = useCallback(
     (event) => {
       event.cancelBubble = true;
@@ -66,11 +76,13 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
 
   const handleDblClick = useCallback(
     () => {
+      // Set Editing State
       setEditing(true);
     },
     []
   );
 
+  // Update Selected Text
   const finishtextChange = useCallback(
     (e) => {
       if (e.key === "Enter") {
@@ -81,6 +93,7 @@ export function MachT({ id, isSelected, type, ...shapeProps }) {
     [lngtext]
   );
 
+  // Return a Grouped Konva component containing the custom Shape, Text, and Transformer
   return (
     <>
       <Group draggable>

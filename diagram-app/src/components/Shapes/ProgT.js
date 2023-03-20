@@ -2,23 +2,28 @@ import React, { useRef, useEffect, useCallback, useState } from "react";
 import { Transformer, Shape, Group, Text } from "react-konva";
 import { Html } from "react-konva-utils";
 
-import { LIMITS } from "../../constants";
 import { selectShape, moveShape, transformTransTShape } from "../../state";
 
+// T Diagram Program Component
 export function ProgT({ id, isSelected, type, ...shapeProps }) {
+
+  // Shape and Transformer Refs
   const shapeRef = useRef();
   const transformerRef = useRef();
 
+  // Update Transformer on Shape Select
   useEffect(() => {
     if (isSelected) {
       transformerRef.current.nodes([shapeRef.current]);
       transformerRef.current.getLayer().batchDraw();
     }
   }, [isSelected]);
-  
+
+  // Text Refs  
   const prgtextRef = useRef();
   const lngtextRef = useRef();
 
+  // Text States
   const [prgtext, setprgtext] = useState({
     text: "program",
     x: 0,
@@ -35,8 +40,10 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
     y: 0
   });
 
+  // Text Editing State
   const [editing, setEditing] = useState(false);
 
+  // Update Text Positions on Shape Move
   useEffect(() => {
     if (shapeRef.current) {
       const pos = shapeRef.current.position();
@@ -54,6 +61,7 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
     }
   }, [shapeRef.current]);
 
+  // Define SelfRect for Shape
   useEffect(() => {
     shapeRef.current.getSelfRect = () => {
       return {
@@ -65,6 +73,7 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
     };
   }, []);
 
+  // Define Select, Drag, and DblClick Event Handlers
   const handleSelect = useCallback(
     (event) => {
       event.cancelBubble = true;
@@ -83,6 +92,7 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
 
   const handleDblClick = useCallback(
     (text) => () => {
+      // Set Edit State and Selected Text State
       setEditing(true);
       setseltext((seltext) => ({
         ...seltext,
@@ -94,6 +104,7 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
     [prgtext, lngtext]
   );
 
+  // Update Selected Text
   const finishtextChange = useCallback(
     (e) => {
       if (e.key === "Enter") {
@@ -108,7 +119,7 @@ export function ProgT({ id, isSelected, type, ...shapeProps }) {
     [seltext, prgtext, lngtext]
   );
 
-
+  // Return a Grouped Konva component containing the custom Shape, Text, and Transformer
   return (
     <>
       <Group draggable>

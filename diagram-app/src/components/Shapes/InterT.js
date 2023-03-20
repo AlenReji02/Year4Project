@@ -2,13 +2,16 @@ import React, { useRef, useEffect, useCallback, useState } from "react";
 import { Rect as KonvaRectangle, Group, Text, Transformer } from "react-konva";
 import { Html } from "react-konva-utils";
 
-import { LIMITS } from "../../constants";
 import { selectShape, moveShape } from "../../state";
 
+// T Diagram Interpreter Component
 export function InterT({ id, isSelected, type, ...shapeProps }) {
+
+  // Shape and Transformer Refs
   const shapeRef = useRef();
   const transformerRef = useRef();
 
+  // Update Transformer on Shape Select
   useEffect(() => {
     if (isSelected) {
       transformerRef.current.nodes([shapeRef.current]);
@@ -16,9 +19,11 @@ export function InterT({ id, isSelected, type, ...shapeProps }) {
     }
   }, [isSelected]);
   
+  // Text Refs
   const srctextRef = useRef();
   const lngtextRef = useRef();
 
+  // Text States
   const [srctext, setsrctext] = useState({
     text: "source",
     x: 0,
@@ -35,8 +40,10 @@ export function InterT({ id, isSelected, type, ...shapeProps }) {
     y: 0
   });
 
+  // Text Editing State
   const [editing, setEditing] = useState(false);
 
+  // Update Text Positions on Shape Move
   useEffect(() => {
     if (shapeRef.current) {
       const pos = shapeRef.current.position();
@@ -54,6 +61,7 @@ export function InterT({ id, isSelected, type, ...shapeProps }) {
     }
   }, [shapeRef.current]);
 
+  // Define Select, Drag, and DblClick Handlers
   const handleSelect = useCallback(
     (event) => {
       event.cancelBubble = true;
@@ -72,6 +80,7 @@ export function InterT({ id, isSelected, type, ...shapeProps }) {
 
   const handleDblClick = useCallback(
     (text) => () => {
+      // Set Edit State and Selected Text State
       setEditing(true);
       setseltext((seltext) => ({
         ...seltext,
@@ -83,6 +92,7 @@ export function InterT({ id, isSelected, type, ...shapeProps }) {
     [srctext, lngtext]
   );
 
+  // Update Selected Text
   const finishtextChange = useCallback(
     (e) => {
       if (e.key === "Enter") {
@@ -97,6 +107,7 @@ export function InterT({ id, isSelected, type, ...shapeProps }) {
     [seltext, srctext, lngtext]
   );
 
+  // Return grouped Konva component with custom Shape, Text, and Transformer
   return (
     <>
       <Group draggable>
