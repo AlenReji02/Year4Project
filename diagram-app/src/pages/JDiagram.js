@@ -1,7 +1,7 @@
 import '../diagrams.css';
 
-import Navbar from '../Components/Navbar';
-import Infocard from '../Components/Infocard';
+import Navbar from '../components/Navbar';
+import Infocard from '../components/Infocard';
 
 import transJ from '../images/j-page-images/transJ.png';
 import interJ from '../images/j-page-images/interJ.png';

@@ -1,7 +1,7 @@
 import '../diagrams.css';
 
-import Navbar from '../Components/Navbar';
-import Infocard from '../Components/Infocard';
+import Navbar from '../components/Navbar';
+import Infocard from '../components/Infocard';
 
 import interT from '../images/t-page-images/interT.png';
 import progT from '../images/t-page-images/progT.png';

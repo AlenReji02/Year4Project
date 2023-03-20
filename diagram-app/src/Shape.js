@@ -2,14 +2,14 @@ import React, { useCallback } from "react";
 
 import { SHAPE_TYPES } from "./constants";
 import { useShapes } from "./state";
-import { InterT } from "./Components/Shapes/InterT";
-import { TransT } from "./Components/Shapes/TransT";
-import { ProgT } from "./Components/Shapes/ProgT";
-import { MachT } from "./Components/Shapes/MachT";
-import { TransJ } from "./Components/Shapes/TransJ";
-import { InterJ } from "./Components/Shapes/InterJ";
-import { CompJ } from "./Components/Shapes/CompJ";
-import { MachJ } from "./Components/Shapes/MachJ";
+import { InterT } from "./components/Shapes/InterT";
+import { TransT } from "./components/Shapes/TransT";
+import { ProgT } from "./components/Shapes/ProgT";
+import { MachT } from "./components/Shapes/MachT";
+import { TransJ } from "./components/Shapes/TransJ";
+import { InterJ } from "./components/Shapes/InterJ";
+import { CompJ } from "./components/Shapes/CompJ";
+import { MachJ } from "./components/Shapes/MachJ";
 
 // Renders Shape component based on shape type
 export function Shape({ shape }) {

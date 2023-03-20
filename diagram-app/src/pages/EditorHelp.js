@@ -1,6 +1,6 @@
 import '../diagrams.css';
 
-import Navbar from '../Components/Navbar';
+import Navbar from '../components/Navbar';
 
 import drag from '../images/drag.gif';
 import connect from '../images/connect.gif';
