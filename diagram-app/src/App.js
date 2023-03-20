@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Toolbar } from "./Components/Toolbar";
+import { Toolbar } from "./components/Toolbar";
 import { Canvas } from "./Components/Canvas";
 import { Properties } from "./Components/Properties";
 
