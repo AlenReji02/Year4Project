@@ -7,6 +7,7 @@ import { SHAPE_TYPES, DEFAULTS, LIMITS } from "./constants";
 
 const APP_NAMESPACE = "__T_diagrams__";
 
+// Define base state
 const baseState = {
   selected: null,
   shapes: {}
@@ -15,8 +16,11 @@ const baseState = {
 export const useShapes = createStore(() => {
   const initialState = JSON.parse(localStorage.getItem(APP_NAMESPACE));
 
+  // If there are any existing shapes, merge them with the base state
   return { ...baseState, shapes: initialState ?? {} };
 });
+
+// Updates state using immer
 const setState = (fn) => useShapes.set(produce(fn));
 
 export const reset = () => {
